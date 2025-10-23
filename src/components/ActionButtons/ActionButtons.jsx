@@ -32,8 +32,8 @@ export default function ActionButtons({ isInput }) {
   }, []);
 
   return (
-    <footer>
-      <section>
+    <footer className="w-full h-[82px] flex items-end justify-between relative">
+      <section className="h-full flex items-end gap-[0.5rem]">
         <button onClick={handleSpeech} className="action-btns">
           <SoundIcon />
         </button>
@@ -42,9 +42,11 @@ export default function ActionButtons({ isInput }) {
         </button>
       </section>
       {isInput ? (
-        <section>
-          <p>{boxData.length}/500</p>
-          <button type="submit">
+        <section className="w-[23%] h-full flex flex-col items-end gap-[0.5rem]">
+          <p className="mr-1.5 text-[0.75rem]">{boxData.length}/500</p>
+          <button
+            className="w-full h-[50px] bg-[#263FA9] flex items-center justify-center border-2 border-[#7CA9F3] rounded-2xl font-bold cursor-pointer"
+            type="submit">
             <AlphaIcon />
             Translate
           </button>
