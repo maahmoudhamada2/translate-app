@@ -30,7 +30,7 @@ export default function LanguageBar({ isInput }) {
   };
 
   return (
-    <header>
+    <header className="w-full h-[60px] flex items-center gap-[2rem] border-b-2 border-[#394150] text-[#D2D5DA] font-bold text-[0.875rem] ">
       {defaultLangs.map((lang, idx) => (
         <LanguageItem
           key={idx}
@@ -41,7 +41,10 @@ export default function LanguageBar({ isInput }) {
         />
       ))}
       {choosedLanguage.code === undefined ? (
-        <button type="button" onClick={toggleList}>
+        <button
+          className="flex items-center gap-[0.5rem] cursor-pointer"
+          type="button"
+          onClick={toggleList}>
           {choosedLanguage.name}
           <ExpandDownIcon />
         </button>
@@ -57,7 +60,10 @@ export default function LanguageBar({ isInput }) {
         <LangSelectionList isInput={isInput} toggleList={toggleList} />
       ) : null}
       {!isInput ? (
-        <button onClick={handleSwitch} type="button">
+        <button
+          className="action-btns absolute top-[40px] right-[30px]"
+          onClick={handleSwitch}
+          type="button">
           <SwitchIcon />
         </button>
       ) : null}
