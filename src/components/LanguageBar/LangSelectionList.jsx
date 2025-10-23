@@ -160,7 +160,7 @@ export default function LangSelectionList({ isInput, toggleList }) {
             langInfo={lang}
             inputName={isInput ? "lang-pair-one" : "lang-pair-two"}
             handleFn={handleLangClick}
-            role={"secondray"}
+            isPrimary={false}
           />
         ))}
       </section>

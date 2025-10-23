@@ -36,7 +36,7 @@ export default function LanguageBar({ isInput }) {
           key={idx}
           langInfo={lang}
           inputName={isInput ? "lang-pair-one" : "lang-pair-two"}
-          role="primary"
+          isPrimary={true}
           handleFn={handleDefaultBtns}
         />
       ))}
@@ -51,7 +51,7 @@ export default function LanguageBar({ isInput }) {
       ) : (
         <LanguageItem
           langInfo={choosedLanguage}
-          role="primary"
+          isPrimary={true}
           inputName={isInput ? "lang-pair-one" : "lang-pair-two"}
           handleFn={toggleList}
         />
