@@ -2,6 +2,7 @@ import useLangData from "../../store/useLangData";
 import { CloseIcon } from "../../ui/icons/index";
 import LanguageItem from "./LanguageItem";
 import { useState } from "react";
+import clsx from "clsx";
 
 const languagesList = [
   { code: "af", name: "Afrikaans" },
@@ -136,18 +137,23 @@ export default function LangSelectionList({ isInput, toggleList }) {
   };
 
   return (
-    <article>
-      <header>
+    <article
+      className={clsx(
+        "w-full h-full flex flex-col gap-[2rem] absolute top-0 left-0 rounded-3xl p-[2rem] z-1",
+        isInput ? "bg-[#212936]" : "bg-[#121826]"
+      )}>
+      <header className="w-full flex justify-between pb-[0.5rem] border-b-2 border-[#394150]">
         <input
+          className="w-[95%] border-0 p-[0.5rem] focus-visible:outline-0"
           type="text"
           placeholder={isInput ? "Translate from" : "Translate to"}
           onChange={handleSearch}
         />
-        <button type="button" onClick={toggleList}>
+        <button className="cursor-pointer" type="button" onClick={toggleList}>
           <CloseIcon />
         </button>
       </header>
-      <section>
+      <section className="w-full flex flex-wrap justify-center gap-[1rem] overflow-y-scroll custom-scrollbar">
         {langList.map((lang, idx) => (
           <LanguageItem
             key={idx}
