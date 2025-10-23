@@ -1,1 +1,37 @@
-@import 'tailwindcss'
+@import 'tailwindcss';
+
+@layer utilities {
+    .custom-scrollbar {
+        scrollbar-color: #394150 transparent;
+    }
+}
+
+@theme {
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 1024px;
+    --breakpoint-lg: 1280px;
+}
+
+;
+
+html,
+body,
+#root {
+    @apply min-h-screen bg-[#040711];
+    font-family: 'DM Sans', sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+
+.action-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #394150;
+    border-radius: 10px;
+    padding: 0.3rem;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
